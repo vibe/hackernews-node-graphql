@@ -1,0 +1,10 @@
+{
+  "name": "hackernews-node-graphql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Christian Franco <contact@francoslab.com>",
+  "license": "MIT",
+  "dependencies": {
+    "graphql-yoga": "^1.13.1"
+  }
+}
