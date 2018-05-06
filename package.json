@@ -5,6 +5,7 @@
   "author": "Christian Franco <contact@francoslab.com>",
   "license": "MIT",
   "dependencies": {
-    "graphql-yoga": "^1.13.1"
+    "graphql-yoga": "^1.13.1",
+    "nodemon": "^1.17.4"
   }
 }
