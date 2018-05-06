@@ -22,6 +22,18 @@ const resolvers = {
 			links.push(link);
 			return link;
 		},
+		updateLink: (root, args) => {
+			const { id, url, description } = args;
+			if (!id) {
+				return null;
+			}
+			for(let i = 0; i < links.length; i++) {
+				if(links[i].id === id) {
+					return links[i];
+				}
+			}
+			return null;
+		},
 	},
 	Link: {
 		id: (root) => root.id,
