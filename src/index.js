@@ -28,12 +28,32 @@ const resolvers = {
 				return null;
 			}
 			for(let i = 0; i < links.length; i++) {
-				if(links[i].id === id) {
+				const workingLink = links[i];
+				if(workingLink.id === id) {
+					links[i] = {
+						...workingLink,
+						url: url || workingLink.url,
+						description: description || workingLink.description,
+					}
 					return links[i];
 				}
 			}
 			return null;
 		},
+		deleteLink: (root, args) => {
+			const { id, url, description } = args;
+			if (!id) {
+				return null;
+			}
+			let deletedLink = null;
+			links = links.filter(link => {
+				if(link.id === id) {
+					deletedLink = link;
+				}
+				return link.id !== id
+			});
+			return deletedLink;
+		}
 	},
 	Link: {
 		id: (root) => root.id,
